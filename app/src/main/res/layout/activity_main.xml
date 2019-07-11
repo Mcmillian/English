@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".business.main.MainActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="申一茗学英语"
+            app:titleTextColor="@color/titleTextColor" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <TextView
+            android:id="@+id/tip1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Hi,"
+            android:textColor="@color/blue_500"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tip2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="来自兄长对你的关爱 !"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tip1" />
+
+        <View
+            android:id="@+id/tip3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="32dp"
+            android:background="#08000000"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tip2"
+            />
+
+
+        <TextView
+            android:id="@+id/examCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/contextTextColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/wordCount"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tip3"
+            android:layout_marginTop="32dp"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/examCountTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="今日考试"
+            app:layout_constraintEnd_toEndOf="@+id/examCount"
+            app:layout_constraintStart_toStartOf="@+id/examCount"
+            app:layout_constraintTop_toBottomOf="@+id/examCount" />
+
+        <TextView
+            android:id="@+id/wordCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/contextTextColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/rightCount"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/examCount"
+            app:layout_constraintTop_toTopOf="@+id/examCount"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/wordCountTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="总题数"
+            app:layout_constraintEnd_toEndOf="@+id/wordCount"
+            app:layout_constraintStart_toStartOf="@+id/wordCount"
+            app:layout_constraintTop_toBottomOf="@+id/wordCount" />
+
+        <TextView
+            android:id="@+id/rightCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/contextTextColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/rightPercent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/wordCount"
+            app:layout_constraintTop_toTopOf="@+id/examCount"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/rightCountTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="正确"
+            app:layout_constraintEnd_toEndOf="@+id/rightCount"
+            app:layout_constraintStart_toStartOf="@+id/rightCount"
+            app:layout_constraintTop_toBottomOf="@+id/rightCount" />
+
+        <TextView
+            android:id="@+id/rightPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/contextTextColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/rightCount"
+            app:layout_constraintTop_toTopOf="@+id/examCount"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/rightPercentTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="正确率"
+            app:layout_constraintEnd_toEndOf="@+id/rightPercent"
+            app:layout_constraintStart_toStartOf="@+id/rightPercent"
+            app:layout_constraintTop_toBottomOf="@+id/rightPercent" />
+
+        <Button
+            android:id="@+id/examButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="32dp"
+            android:background="@drawable/round_button_background"
+            app:layout_constraintTop_toBottomOf="@+id/examCountTip"
+            android:text="开始练习"
+            android:textStyle="bold"
+            android:textColor="@color/primaryTextColor"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

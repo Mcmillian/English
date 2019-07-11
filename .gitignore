@@ -1,0 +1,57 @@
+*.iml
+.gradle
+.gradle/
+/local.properties
+# 本地配置文件 (sdk path, etc)
+local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/assetWizardSettings.xml
+.idea/dictionaries
+.idea/libraries
+.idea/caches
+
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+build/
+/captures
+.externalNativeBuild
+# 日志文件
+*.log
+# Freeline (Android 平台上的秒级编译方案)
+freeline.py
+freeline/
+freeline_project_description.json
+
+# fastlane (自动化打包框架)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+fastlane/readme.md
+
+# Built application 文件
+*.apk
+*.ap_
+
+# ART/Dalvik VM 文件
+*.dex
+
+# Java class 文件
+*.class
+
+# Generated 文件夹
+bin/
+gen/
+out/
+
+*.rar
+*.zip

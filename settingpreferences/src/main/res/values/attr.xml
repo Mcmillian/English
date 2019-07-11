@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="title" format="string" />
+    <attr name="summary" format="string" />
+    <attr name="text" format="string" />
+    <attr name="icon" format="reference" />
+    <attr name="iconTint" format="color" />
+
+    <declare-styleable name="TextPreference">
+        <attr name="summaryHint" format="string" />
+        <attr name="title"/>
+        <attr name="summary"/>
+        <attr name="text"/>
+        <attr name="icon"/>
+        <attr name="iconTint"/>
+        <attr name="navIcon" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="EditPreference">
+        <attr name="hint" format="string" />
+        <attr name="title"/>
+        <attr name="text"/>
+        <attr name="icon"/>
+        <attr name="iconTint"/>
+        <attr name="maxLines" format="integer" />
+        <attr name="maxLength" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SwitchPreference">
+        <attr name="checked" format="boolean" />
+        <attr name="title"/>
+        <attr name="summary"/>
+        <attr name="icon"/>
+        <attr name="iconTint"/>
+    </declare-styleable>
+</resources>
