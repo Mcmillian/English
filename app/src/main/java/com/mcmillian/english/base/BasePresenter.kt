@@ -2,9 +2,7 @@ package com.mcmillian.english.base
 
 import com.mcmillian.english.BuildConfig
 import com.mcmillian.english.model.data.Response
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 import org.jetbrains.anko.AnkoLogger
 import java.net.ConnectException
 import java.net.SocketTimeoutException
@@ -12,14 +10,16 @@ import java.net.SocketTimeoutException
 open class BasePresenter(private val scope: CoroutineScope) : CoroutineScope by scope, AnkoLogger {
 
     fun <T> doWebServer(
-        block: CoroutineScope.() -> Response<T>,
+        block: suspend CoroutineScope.() -> Response<T>,
         onSuccess: (T) -> Unit,
         onFail: (String) -> Unit,
         onEnd: (() -> Unit)? = null
     ) {
         scope.launch {
             try {
-                val response =  block()
+                val response = withContext(Dispatchers.IO){
+                    block()
+                }
                 if (response.isOk){
                     onSuccess(response.data)
                 }else{

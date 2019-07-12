@@ -4,10 +4,12 @@ import android.os.Bundle
 import androidx.annotation.IntDef
 import com.mcmillian.english.R
 import com.mcmillian.english.base.BaseActivity
-import com.mcmillian.english.business.exam.wordRangeSelectDialog
+import com.mcmillian.english.business.exam.navToExam
+import com.mcmillian.english.model.local.AppDatabase
+import com.szbitnet.common.selector
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.indeterminateProgressDialog
 import org.jetbrains.anko.sdk27.coroutines.onClick
-import org.jetbrains.anko.selector
 
 class MainActivity : BaseActivity() {
 
@@ -15,10 +17,11 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        AppDatabase.getDatabase(this)
+
         examButton.onClick {
-            selector("题目方式", listOf("听写", "翻译", "听写 + 翻译")) { _, position ->
-                
-            }
+           val type = selector("题目方式", listOf("听写", "翻译", "听写 + 翻译"))
+            navToExam(type)
         }
     }
 }
