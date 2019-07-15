@@ -18,7 +18,7 @@ interface WordService {
 
 
     /**
-     * 获取所有课本
+     * 获取课本所有单元
      */
     @GET("book/{bookId}/unit")
     suspend fun getUnitByBook(@Path("bookId") bookId: Int): Response<List<Unit>>

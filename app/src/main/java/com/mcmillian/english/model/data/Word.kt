@@ -35,7 +35,5 @@ data class Word(
     val hint: String?=null
 ){
     @PrimaryKey(autoGenerate = true)
-    var uid: Int = 0
-
-
+    var id: Int = 0
 }
